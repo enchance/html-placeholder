@@ -1,0 +1,19 @@
+services:
+  api:
+    image: placeholder-api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    tty: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    develop:
+      watch:
+        - action: rebuild
+          path: Dockerfile
+        - action: rebuild
+          path: requirements.txt
+    command: ["fastapi", "dev", "--host", "0.0.0.0"]
