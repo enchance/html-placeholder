@@ -16,7 +16,7 @@ RUN pip install --upgrade pip --no-cache-dir --upgrade -r requirements.txt
 COPY . .
 
 HEALTHCHECK --start-period=30s --interval=30s --retries=5 --timeout=10s \
-    CMD curl -f http://localhost:8000/healthz-account || exit 1
+    CMD curl -f http://localhost:8000/healthz || exit 1
 
 
 EXPOSE 8000
