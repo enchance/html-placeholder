@@ -16,4 +16,4 @@ services:
           path: Dockerfile
         - action: rebuild
           path: requirements.txt
-    command: ["fastapi", "dev", "--host", "0.0.0.0"]
+#    command: ["fastapi", "dev", "--host", "0.0.0.0"]
